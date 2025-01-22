@@ -11,4 +11,5 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Hi George I hope this is ok because the website skeleton way was freaking me out!
 
+[Homework_02](Homework_02.html)
 
