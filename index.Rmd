@@ -1,5 +1,5 @@
 ---
-title: "website setup"
+title: "yep...it's the website"
 author: "Emma Privett"
 date: "2025-01-22"
 output: html_document
@@ -8,8 +8,9 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+This is Emma Privett's beautiful website with all her biol6100 (computational biology) homeworks!!!!!!!
 
-Hi George I hope this is ok because the website skeleton way was freaking me out!
+Hi George I hope this is ok because the website skeleton way was freaking me out! If you'd like me to change this please show me how because Nick showed us a different way than you did
 
 [Homework_02](homework_02.html)
 
