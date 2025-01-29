@@ -1,0 +1,17 @@
+---
+title: "homework_03"
+author: "Emma Privett"
+date: "2025-01-29"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Homework #3 yippee!
+
+1. I used `\s{2,}` to search for every space that was 2 or larger. `\s` found the spaces, the `2` specified that it was two spaces, and the `,`comma specified that it was two or more spaces. I then replaced it with a comma followed by a space.
+
+
+2. 
