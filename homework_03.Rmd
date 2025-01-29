@@ -25,3 +25,5 @@ knitr::opts_chunk$set(echo = TRUE)
 6. Using the original data, I used `(\w)(\w+),(\w{4})(\w+),(\d+).(\d+)(,\d+)` to capture everything independently, making sure to capture the first 4 letters of the species name. Then, following the order of the captures, I replaced it with `\1_\3\7` to obtain a final result with the first letter of the genus, underscore, first 4 letters of the species, comma, and final number.
 
 7. Using the original data, I found `(\w{3})(\w+),(\w{3})(\w+),(\d+).(\d+)(,\d+)` capturing everything independently making sure to specify the letters of each word I wanted to keep. For the replacement, in order to rearrange the digits I did `\1\3\7,\5.\6`, leaving me with the final correct format.
+
+8. For the spaces, I typed a space into the find bar and replaced it with nothing. For the special characters, I went character by character using versions of `\%` until all of the characters were gone. When it came to replacing the random underscores, I made sure to do `\_` only on the lines of data. For the `NA` present in the binary column, I replaced all `NA` with `0`. 
