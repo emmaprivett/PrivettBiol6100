@@ -385,6 +385,14 @@ species, get rid of the first number, and keep the final comma and
 number. In the replace box, I used <code>\1_\2\3</code> to format by the
 first letter of the genus, underscore species, and keep the final
 number.</p></li>
+<li><p>Using the original data, I used
+<code>(\w)(\w+),(\w{4})(\w+),(\d+).(\d+)(,\d+)</code> to capture
+everything independently, making sure to capture the first 4 letters of
+the species name. Then, following the order of the captures, I replaced
+it with <code>\1_\3\7</code> to obtain a final result with the first
+letter of the genus, underscore, first 4 letters of the species, comma,
+and final number.</p></li>
+<li></li>
 </ol>
 </div>
 
