@@ -365,7 +365,11 @@ or larger. <code>\s</code> found the spaces, the <code>2</code>
 specified that it was two spaces, and the <code>,</code>comma specified
 that it was two or more spaces. I then replaced it with a comma followed
 by a space.</p></li>
-<li></li>
+<li><p>I used <code>(\w+), (\w+), (.*)</code> to capture the first word
+as the first capture, the second word as the second capture, and the
+rest of the line as the third capture. I then replaced it with
+<code>\2 \1 \(\3)</code> to swap the first and last names, as well as
+putting the university name (capture 3) in parentheses.</p></li>
 </ol>
 </div>
 

@@ -14,4 +14,4 @@ knitr::opts_chunk$set(echo = TRUE)
 1. I used `\s{2,}` to search for every space that was 2 or larger. `\s` found the spaces, the `2` specified that it was two spaces, and the `,`comma specified that it was two or more spaces. I then replaced it with a comma followed by a space.
 
 
-2. 
+2. I used `(\w+), (\w+), (.*)` to capture the first word as the first capture, the second word as the second capture, and the rest of the line as the third capture. I then replaced it with `\2 \1 \(\3)` to swap the first and last names, as well as putting the university name (capture 3) in parentheses. 
