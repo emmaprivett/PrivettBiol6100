@@ -15,3 +15,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 2. I used `(\w+), (\w+), (.*)` to capture the first word as the first capture, the second word as the second capture, and the rest of the line as the third capture. I then replaced it with `\2 \1 \(\3)` to swap the first and last names, as well as putting the university name (capture 3) in parentheses. 
+
+3. I used `mp3` as my find, and replaced it with `mp3 \r` to keep the mp3 and to add a line return after each number.
+
+4. I used `(\d+)\s(.*)(\.mp3)` to capture the first digits, ignore the space, capture the rest of the song name, and capture the `.mp3` at the end of the song title. I then used `\2_\1\3` to make the song name capture first, add an underscore before the digits capture, and keep the `.mp3` at the end.
+
+

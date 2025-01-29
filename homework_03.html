@@ -370,6 +370,15 @@ as the first capture, the second word as the second capture, and the
 rest of the line as the third capture. I then replaced it with
 <code>\2 \1 \(\3)</code> to swap the first and last names, as well as
 putting the university name (capture 3) in parentheses.</p></li>
+<li><p>I used <code>mp3</code> as my find, and replaced it with
+<code>mp3 \r</code> to keep the mp3 and to add a line return after each
+number.</p></li>
+<li><p>I used <code>(\d+)\s(.*)(\.mp3)</code> to capture the first
+digits, ignore the space, capture the rest of the song name, and capture
+the <code>.mp3</code> at the end of the song title. I then used
+<code>\2_\1\3</code> to make the song name capture first, add an
+underscore before the digits capture, and keep the <code>.mp3</code> at
+the end.</p></li>
 </ol>
 </div>
 
