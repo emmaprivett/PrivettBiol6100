@@ -8,12 +8,15 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-This is Emma Privett's beautiful website with all her biol6100 (computational biology) homeworks!!!!!!!
+This is Emma Privett's website with all of her biol6100 (computational biology) homeworks!!!!!!!
 
-Hi George I hope this is ok because the website skeleton way was freaking me out! If you'd like me to change this please show me how because Nick showed us a different way than you did
+Hi George!!!!!
 
 [Homework_02](homework_02.html)
 
 
 [Homework_03](homework_03.html)
+
+
+[Homework_04](homework_04.html)
 
