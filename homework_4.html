@@ -357,7 +357,59 @@ display: none;
 </div>
 
 
-
+<div id="question-1" class="section level3">
+<h3>Question 1</h3>
+<pre><code>x &lt;- 1.1
+a &lt;- 2.2
+b &lt;- 3.3
+#question a
+z &lt;- x^a^b
+print(z)
+#question b
+z &lt;- (x^a)^b
+print(z)
+#question c
+z &lt;- 3*x^3 + 2*x^2 + 1
+print(z) </code></pre>
+</div>
+<div id="question-2" class="section level3">
+<h3>Question 2</h3>
+<pre><code>#question a
+c(seq(1,8),seq(7,1))
+#question b
+my_vec &lt;- 1:5
+rep(x=my_vec, times=my_vec)
+#question c
+my_vec2 &lt;- 5:1
+rep(x=my_vec2, times=my_vec)</code></pre>
+</div>
+<div id="question-3" class="section level3">
+<h3>Question 3</h3>
+<pre><code>random &lt;- runif(2)
+x &lt;- random[1]
+y &lt;- random[2]
+theta &lt;- atan(y/x)
+r &lt;- sqrt(x^2 + y^2)</code></pre>
+</div>
+<div id="question-4" class="section level3">
+<h3>Question 4</h3>
+<pre><code>queue &lt;- c(&quot;sheep&quot;,&quot;fox&quot;,&quot;owl&quot;,&quot;ant&quot;)
+queue &lt;- c(queue,&quot;serpant&quot;) #a
+queue &lt;- c(queue[-1]) #b
+queue &lt;- c(&quot;donkey&quot;, queue)#c
+queue &lt;- c(queue[-which(queue == &quot;serpant&quot;)]) #d
+queue &lt;- queue[-which(queue == &quot;owl&quot;)] #e
+pos_ant &lt;- which(queue == &quot;ant&quot;)
+queue &lt;- c(queue[1:(pos_ant-1)], &quot;aphid&quot;, queue[pos_ant:length(queue)]) #f
+pos_aphid &lt;- which( queue == &quot;aphid&quot;) #g
+print(pos_aphid)</code></pre>
+</div>
+<div id="question-5" class="section level3">
+<h3>Question 5</h3>
+<pre><code>start &lt;- 1:100
+vector &lt;- which(start %% 2 != 0 &amp; start %% 3 != 0 &amp; start %% 7 != 0)
+print(vector)</code></pre>
+</div>
 
 
 

@@ -9,3 +9,60 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+### Question 1
+``` 
+x <- 1.1
+a <- 2.2
+b <- 3.3
+#question a
+z <- x^a^b
+print(z)
+#question b
+z <- (x^a)^b
+print(z)
+#question c
+z <- 3*x^3 + 2*x^2 + 1
+print(z) 
+```
+
+### Question 2
+```
+#question a
+c(seq(1,8),seq(7,1))
+#question b
+my_vec <- 1:5
+rep(x=my_vec, times=my_vec)
+#question c
+my_vec2 <- 5:1
+rep(x=my_vec2, times=my_vec)
+```
+
+### Question 3
+```
+random <- runif(2)
+x <- random[1]
+y <- random[2]
+theta <- atan(y/x)
+r <- sqrt(x^2 + y^2)
+```
+
+### Question 4
+```
+queue <- c("sheep","fox","owl","ant")
+queue <- c(queue,"serpant") #a
+queue <- c(queue[-1]) #b
+queue <- c("donkey", queue)#c
+queue <- c(queue[-which(queue == "serpant")]) #d
+queue <- queue[-which(queue == "owl")] #e
+pos_ant <- which(queue == "ant")
+queue <- c(queue[1:(pos_ant-1)], "aphid", queue[pos_ant:length(queue)]) #f
+pos_aphid <- which( queue == "aphid") #g
+print(pos_aphid)
+```
+
+### Question 5
+```
+start <- 1:100
+vector <- which(start %% 2 != 0 & start %% 3 != 0 & start %% 7 != 0)
+print(vector)
+```
