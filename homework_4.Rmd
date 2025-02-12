@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ### Question 1
-``` 
+``` {r, eval=TRUE,echo=TRUE}
 x <- 1.1
 a <- 2.2
 b <- 3.3
@@ -26,7 +26,7 @@ print(z)
 ```
 
 ### Question 2
-```
+```{r, eval=TRUE,echo=TRUE}
 #question a
 c(seq(1,8),seq(7,1))
 #question b
@@ -38,7 +38,7 @@ rep(x=my_vec2, times=my_vec)
 ```
 
 ### Question 3
-```
+```{r, eval=TRUE,echo=TRUE}
 random <- runif(2)
 x <- random[1]
 y <- random[2]
@@ -47,7 +47,7 @@ r <- sqrt(x^2 + y^2)
 ```
 
 ### Question 4
-```
+```{r, eval=TRUE,echo=TRUE}
 queue <- c("sheep","fox","owl","ant")
 queue <- c(queue,"serpant") #a
 queue <- c(queue[-1]) #b
@@ -61,7 +61,7 @@ print(pos_aphid)
 ```
 
 ### Question 5
-```
+```{r, eval=TRUE,echo=TRUE}
 start <- 1:100
 vector <- which(start %% 2 != 0 & start %% 3 != 0 & start %% 7 != 0)
 print(vector)

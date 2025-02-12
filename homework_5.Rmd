@@ -1,0 +1,56 @@
+---
+title: "Homework 5"
+author: "Emma Privett"
+date: "2025-02-12"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Question 1
+```{r, eval=TRUE,echo=TRUE}
+n_dims <- sample(3:9, 1)
+vec <- c(1:n_dims^2)
+re_vec <- sample(vec)
+revec_matrix <- matrix(data=re_vec,nrow=n_dims,ncol=n_dims)
+print(revec_matrix)
+trans_rvmx<- t(revec_matrix)
+print(trans_rvmx) #changed by making rows columns and columns rows
+eigen_vec <- eigen(x=trans_rvmx,symmetric=TRUE) #all of these values are doubles
+typeof(eigen_vec$values) #double
+typeof(eigen_vec$vectors) #double
+```
+
+### Question 2
+```{r, eval=TRUE,echo=TRUE}
+my_matrix <- matrix(data=runif(16),nrow=4,ncol = 4)
+print(my_matrix)
+my_logical <- c(0.5 < runif(1:100))
+print(my_logical)
+my_letters <- sample(letters)
+
+my_list <- list(my_matrix,my_logical,my_letters)
+new_list <- list(my_list[[1]][2,2], my_list[[2]][2], my_list[[3]][2])
+typeof(new_list[[1]]) #double
+typeof(new_list[[2]]) #logical
+typeof(new_list[[3]]) #character
+single_av <- c(new_list[[1]],new_list[[2]],new_list[[3]])
+typeof(single_av) #now just a character
+```
+
+### Question 3
+```{r, eval=TRUE,echo=TRUE}
+my_unis <- runif(26, min=1, max=10)
+my_letters <- sample(LETTERS)
+data_frame <- data.frame(my_unis,my_letters)
+
+data_frame[ ,1][sample(nrow(data_frame), 4)] <- NA
+is.na(data_frame)
+library(dplyr)
+ABC_dataframe <- data_frame %>% arrange(data_frame[2])
+print(ABC_dataframe)
+mean(ABC_dataframe[,1],na.rm=TRUE)
+```
+
