@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 This is Emma Privett's website with all of her biol6100 (computational biology) homeworks!!!!!!!
 
-Hi George!!!!!
+Hi George :)
 
 [Homework_02](homework_02.html)
 
@@ -24,3 +24,4 @@ Hi George!!!!!
 
 [Homework_06](homework_6.html)
 
+[Homework_07](homework_07.html)

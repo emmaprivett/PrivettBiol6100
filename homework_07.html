@@ -11,9 +11,9 @@
 
 <meta name="author" content="Emma Privett" />
 
-<meta name="date" content="2025-01-22" />
+<meta name="date" content="2025-03-05" />
 
-<title>yep…it’s the website…</title>
+<title>Homework 7</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -350,22 +350,149 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">yep…it’s the website…</h1>
+<h1 class="title toc-ignore">Homework 7</h1>
 <h4 class="author">Emma Privett</h4>
-<h4 class="date">2025-01-22</h4>
+<h4 class="date">2025-03-05</h4>
 
 </div>
 
 
-<p>This is Emma Privett’s website with all of her biol6100
-(computational biology) homeworks!!!!!!!</p>
-<p>Hi George :)</p>
-<p><a href="homework_02.html">Homework_02</a></p>
-<p><a href="homework_03.html">Homework_03</a></p>
-<p><a href="homework_4.html">Homework_04</a></p>
-<p><a href="homework_5.html">Homework_05</a></p>
-<p><a href="homework_6.html">Homework_06</a></p>
-<p><a href="homework_07.html">Homework_07</a></p>
+<p>First, load in the packages and data set.</p>
+<pre class="r"><code>library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre><code>## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+## ✔ forcats   1.0.0     ✔ readr     2.1.5
+## ✔ ggplot2   3.5.1     ✔ stringr   1.5.1
+## ✔ lubridate 1.9.4     ✔ tibble    3.2.1
+## ✔ purrr     1.0.2     ✔ tidyr     1.3.1</code></pre>
+<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()
+## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+<pre class="r"><code>data(iris)</code></pre>
+<div id="question-1" class="section level3">
+<h3>Question 1</h3>
+<pre class="r"><code>glimpse(iris)</code></pre>
+<pre><code>## Rows: 150
+## Columns: 5
+## $ Sepal.Length &lt;dbl&gt; 5.1, 4.9, 4.7, 4.6, 5.0, 5.4, 4.6, 5.0, 4.4, 4.9, 5.4, 4.…
+## $ Sepal.Width  &lt;dbl&gt; 3.5, 3.0, 3.2, 3.1, 3.6, 3.9, 3.4, 3.4, 2.9, 3.1, 3.7, 3.…
+## $ Petal.Length &lt;dbl&gt; 1.4, 1.4, 1.3, 1.5, 1.4, 1.7, 1.4, 1.5, 1.4, 1.5, 1.5, 1.…
+## $ Petal.Width  &lt;dbl&gt; 0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.3, 0.2, 0.2, 0.1, 0.2, 0.…
+## $ Species      &lt;fct&gt; setosa, setosa, setosa, setosa, setosa, setosa, setosa, s…</code></pre>
+<p>There are 150 observations of 5 variables in the iris data set.</p>
+</div>
+<div id="question-2" class="section level3">
+<h3>Question 2</h3>
+<pre class="r"><code>iris1 &lt;- iris%&gt;%
+  filter(Species %in% c(&quot;versicolor&quot;, &quot;virginica&quot;),Sepal.Length&gt;6, Sepal.Width&gt;2.5)
+glimpse(iris1)</code></pre>
+<pre><code>## Rows: 56
+## Columns: 5
+## $ Sepal.Length &lt;dbl&gt; 7.0, 6.4, 6.9, 6.5, 6.3, 6.6, 6.1, 6.7, 6.1, 6.1, 6.4, 6.…
+## $ Sepal.Width  &lt;dbl&gt; 3.2, 3.2, 3.1, 2.8, 3.3, 2.9, 2.9, 3.1, 2.8, 2.8, 2.9, 3.…
+## $ Petal.Length &lt;dbl&gt; 4.7, 4.5, 4.9, 4.6, 4.7, 4.6, 4.7, 4.4, 4.0, 4.7, 4.3, 4.…
+## $ Petal.Width  &lt;dbl&gt; 1.4, 1.5, 1.5, 1.5, 1.6, 1.3, 1.4, 1.4, 1.3, 1.2, 1.3, 1.…
+## $ Species      &lt;fct&gt; versicolor, versicolor, versicolor, versicolor, versicolo…</code></pre>
+<p>There are 56 observations of 5 variables in iris1.</p>
+</div>
+<div id="question-3" class="section level3">
+<h3>Question 3</h3>
+<pre class="r"><code>iris2 &lt;- iris1%&gt;%
+  select(Species, Sepal.Length, Sepal.Width)
+glimpse(iris2)</code></pre>
+<pre><code>## Rows: 56
+## Columns: 3
+## $ Species      &lt;fct&gt; versicolor, versicolor, versicolor, versicolor, versicolo…
+## $ Sepal.Length &lt;dbl&gt; 7.0, 6.4, 6.9, 6.5, 6.3, 6.6, 6.1, 6.7, 6.1, 6.1, 6.4, 6.…
+## $ Sepal.Width  &lt;dbl&gt; 3.2, 3.2, 3.1, 2.8, 3.3, 2.9, 2.9, 3.1, 2.8, 2.8, 2.9, 3.…</code></pre>
+<p>There are 56 observations of 3 variables in iris2.</p>
+</div>
+<div id="question-4" class="section level3">
+<h3>Question 4</h3>
+<pre class="r"><code>iris3 &lt;- iris2 %&gt;%
+  arrange(desc(Sepal.Length))
+head(iris3)</code></pre>
+<pre><code>##     Species Sepal.Length Sepal.Width
+## 1 virginica          7.9         3.8
+## 2 virginica          7.7         3.8
+## 3 virginica          7.7         2.6
+## 4 virginica          7.7         2.8
+## 5 virginica          7.7         3.0
+## 6 virginica          7.6         3.0</code></pre>
+</div>
+<div id="question-5" class="section level3">
+<h3>Question 5</h3>
+<pre class="r"><code>iris4 &lt;- iris3 %&gt;%
+  mutate(Sepal.Area = Sepal.Length*Sepal.Width)
+glimpse(iris4)</code></pre>
+<pre><code>## Rows: 56
+## Columns: 4
+## $ Species      &lt;fct&gt; virginica, virginica, virginica, virginica, virginica, vi…
+## $ Sepal.Length &lt;dbl&gt; 7.9, 7.7, 7.7, 7.7, 7.7, 7.6, 7.4, 7.3, 7.2, 7.2, 7.2, 7.…
+## $ Sepal.Width  &lt;dbl&gt; 3.8, 3.8, 2.6, 2.8, 3.0, 3.0, 2.8, 2.9, 3.6, 3.2, 3.0, 3.…
+## $ Sepal.Area   &lt;dbl&gt; 30.02, 29.26, 20.02, 21.56, 23.10, 22.80, 20.72, 21.17, 2…</code></pre>
+<p>There are 56 observations of 4 variables in iris4.</p>
+</div>
+<div id="question-6" class="section level3">
+<h3>Question 6</h3>
+<pre class="r"><code>iris5 &lt;- iris4 %&gt;%
+  summarise(Avg.Sepal.Length = mean(Sepal.Length), Avg.Sepal.Width=mean(Sepal.Width), Sample.Size= n())
+print(iris5)</code></pre>
+<pre><code>##   Avg.Sepal.Length Avg.Sepal.Width Sample.Size
+## 1         6.698214        3.041071          56</code></pre>
+</div>
+<div id="question-7" class="section level3">
+<h3>Question 7</h3>
+<pre class="r"><code>iris6 &lt;- iris4 %&gt;%
+  group_by(Species) %&gt;%
+  summarise(Avg.Sepal.Length = mean(Sepal.Length), Avg.Sepal.Width=mean(Sepal.Width), Sample.Size= n())
+print(iris6)</code></pre>
+<pre><code>## # A tibble: 2 × 4
+##   Species    Avg.Sepal.Length Avg.Sepal.Width Sample.Size
+##   &lt;fct&gt;                 &lt;dbl&gt;           &lt;dbl&gt;       &lt;int&gt;
+## 1 versicolor             6.48            2.99          17
+## 2 virginica              6.79            3.06          39</code></pre>
+</div>
+<div id="question-8" class="section level3">
+<h3>Question 8</h3>
+<pre class="r"><code>irisFinal &lt;- iris %&gt;%
+  filter(Species %in% c(&quot;versicolor&quot;, &quot;virginica&quot;),Sepal.Length&gt;6, Sepal.Width&gt;2.5) %&gt;%
+  select(Species, Sepal.Length, Sepal.Width) %&gt;%
+  arrange(desc(Sepal.Length)) %&gt;%
+  mutate(Sepal.Area = Sepal.Length*Sepal.Width) %&gt;%
+  group_by(Species) %&gt;%
+  summarise(Avg.Sepal.Length = mean(Sepal.Length), Avg.Sepal.Width=mean(Sepal.Width), Sample.Size= n())
+print(irisFinal)</code></pre>
+<pre><code>## # A tibble: 2 × 4
+##   Species    Avg.Sepal.Length Avg.Sepal.Width Sample.Size
+##   &lt;fct&gt;                 &lt;dbl&gt;           &lt;dbl&gt;       &lt;int&gt;
+## 1 versicolor             6.48            2.99          17
+## 2 virginica              6.79            3.06          39</code></pre>
+</div>
+<div id="question-9" class="section level3">
+<h3>Question 9</h3>
+<pre class="r"><code>longiris &lt;- iris %&gt;%
+  pivot_longer(cols=1:4, names_to=&quot;Measure&quot;, values_to=&quot;Value&quot;)
+head(longiris)</code></pre>
+<pre><code>## # A tibble: 6 × 3
+##   Species Measure      Value
+##   &lt;fct&gt;   &lt;chr&gt;        &lt;dbl&gt;
+## 1 setosa  Sepal.Length   5.1
+## 2 setosa  Sepal.Width    3.5
+## 3 setosa  Petal.Length   1.4
+## 4 setosa  Petal.Width    0.2
+## 5 setosa  Sepal.Length   4.9
+## 6 setosa  Sepal.Width    3</code></pre>
+</div>
 
 
 
