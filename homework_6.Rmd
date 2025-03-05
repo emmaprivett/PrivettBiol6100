@@ -1,0 +1,48 @@
+---
+title: "Homework 6"
+author: "Emma Privett"
+date: "2025-02-27"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+My data set looks at the length to mass ratio of yellow perch caught in Lake Champlain. To create this data set, I first pulled real values from 71 fish from my experimental data. 
+```{r, eval=TRUE,echo=TRUE}
+kbdata <- read.csv(file="kbsampledata.csv",header=TRUE, sep = ",")
+kblength <- kbdata$length
+kbmass <- kbdata$mass
+```
+From there, I ran a linear regression on the data to generate an r-squared value.
+```{r, eval=TRUE,echo=TRUE}
+lin_reg <- lm(kbmass~kblength)
+summary(lin_reg)
+plot(kbdata)
+```
+I saved the standard deviation and mean from both the length and mass data to apply to a random normal distribution with a sample size of 71.
+
+```{r, eval=TRUE,echo=TRUE}
+length_mean<- mean(kblength)
+mass_mean <- mean(kbmass)
+length_sd <- sd(kblength)
+mass_sd <- sd(kbmass)
+kblength_rnorm <- rnorm(71, mean=length_mean, sd=length_sd)
+kbmass_rnorm <- rnorm(71, mean=mass_mean, sd=mass_sd)
+```
+To alter this data set, I chose to vary the sample size and compare their r-squared values. I put these new sample sizes in the vector n. These new sample sizes represent the number of fish caught at each site.
+```{r, eval=TRUE,echo=TRUE}
+n <- c(10,20,50,100)
+```
+Here is my for loop and the results yielded from it.
+```{r, eval=TRUE,echo=TRUE}
+for (i in 1:4) {
+  new_length<- rnorm(n[i], mean=length_mean, sd=length_sd)
+  new_mass <- rnorm(n[i], mean=mass_mean, sd=mass_sd)
+  loop_linreg <- lm(new_mass~new_length)
+  sumstats<- summary(loop_linreg)
+  print(sumstats)
+}
+```
+

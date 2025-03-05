@@ -22,3 +22,5 @@ Hi George!!!!!
 
 [Homework_05](homework_5.html)
 
+[Homework_06](homework_6.html)
+
