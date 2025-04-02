@@ -1,0 +1,13 @@
+---
+title: "Homework 9"
+author: "Emma Privett"
+date: "2025-04-02"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+[Here's my folder](Homework9.zip)
+
+I never want to do this ever again :)
