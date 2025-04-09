@@ -1,0 +1,70 @@
+---
+title: "Homework 10"
+author: "Emma Privett"
+date: "2025-04-09"
+output: html_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Hey guys welcome back to the youtube channel 
+
+## today I'm gonna be making some plots using Pokemon data!!!!!!
+
+### The last time I played Pokemon was Sword and Shield (i didn't finish it ...)
+
+But that's ok! I finished Sun and Moon and that's what counts.
+
+Let's load in the libraries and data:
+
+```{r, eval=TRUE,echo=TRUE}
+library(tidytuesdayR)
+tuesdata <- tidytuesdayR::tt_load('2025-04-01')
+pokedata <- tuesdata$pokemon_df
+library(ggridges)
+library(ggplot2)
+library(viridis)
+library(hrbrthemes)
+library(ggthemes)
+library(patchwork)
+```
+
+## Plot #1: Good ol' Violin Plot
+```{r, eval=TRUE,echo=TRUE}
+type <- pokedata$type_1
+height <- pokedata$height
+
+violin <- ggplot(data=pokedata, aes(x=type, y=height, fill=type)) + geom_violin()+ geom_point(position=position_jitter(width=0.2, height=0.3), color='black',size=0.69) + labs(title='Height versus Pokemon type', x='Pokemon Type', y='Height')
+print(violin)
+```
+
+## Plot #2: 2D Density Plot: Hex Edition!
+```{r, eval=TRUE,echo=TRUE}
+attk <- pokedata$attack
+dfns <- pokedata$defense
+
+hex <- ggplot(data=pokedata, aes(x=attk, y=dfns) ) +
+  geom_hex(bins=25) + scale_fill_continuous(type = "viridis") +
+  theme_economist() + labs(title='Attack versus Defense Stats of all Pokemon', x="Attack Stat", y='Defense Stat')
+print(hex)
+```
+
+## Plot #3: Beeswarm
+```{r, eval=TRUE,echo=TRUE}
+gen <- pokedata$generation_id
+hp <- pokedata$hp
+
+beeswarm <- ggplot(data=pokedata) + aes(x=gen,y=hp,color=gen) + ggbeeswarm::geom_beeswarm(size=2) + labs(title='HP variation within Pokemon generations', x= 'Generation', y='HP')
+print(beeswarm)
+```
+
+and finally...
+
+## Plot #4: Ridgeline
+```{r, eval=TRUE,echo=TRUE}
+xp <- pokedata$base_experience
+
+ridge <- ggplot(data=pokedata) + aes(x=xp, y=type, fill=type) + ggridges::geom_density_ridges() + ggridges::theme_ridges() + labs(title='Average starting experience (XP) per Pokemon type', x='XP', y='Pokemon Type')
+print(ridge)
+```

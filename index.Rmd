@@ -8,7 +8,7 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-This is Emma Privett's website with all of her biol6100 (computational biology) homeworks!!!!!!!
+This is Emma Privett's website with all of her biol6100 (computational biology) homework
 
 Hi George :)
 
@@ -27,3 +27,5 @@ Hi George :)
 [Homework_08](homework_8.html)
 
 [Homework_09](homework_9.html)
+
+[Homework_10](homework_10.html)
